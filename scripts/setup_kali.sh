@@ -86,7 +86,12 @@ CREATE USER IF NOT EXISTS '${DB_USER}'@'localhost' IDENTIFIED BY '${DB_PASS}';
 GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_USER}'@'localhost';
 FLUSH PRIVILEGES;
 EOSQL
+
+# Reset admin password to 'admin' with a fresh bcrypt hash
+ADMIN_HASH=$(php -r "echo password_hash('admin', PASSWORD_BCRYPT);")
+mysql "$DB_NAME" -e "UPDATE users SET password_hash='${ADMIN_HASH}' WHERE username='admin';"
 ok "Database '$DB_NAME' ready — user: $DB_USER"
+ok "Admin password reset to 'admin'"
 
 # ── 5. Deploy project to web root ──────────────────────────
 info "Deploying project to $WEB_ROOT ..."
