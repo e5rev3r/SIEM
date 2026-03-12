@@ -1,0 +1,67 @@
+/* CentralLog — Custom Styles */
+
+/* Sidebar nav links */
+#sidebar .nav-link {
+    color: #adb5bd;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 2px;
+    transition: background-color 0.15s;
+}
+
+#sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+#sidebar .nav-link.active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* Stat cards */
+.card {
+    border-radius: 8px;
+}
+
+/* Severity badge colors */
+.badge.bg-danger   { background-color: #dc3545 !important; }
+.badge.bg-warning  { background-color: #ffc107 !important; color: #000 !important; }
+.badge.bg-success  { background-color: #198754 !important; }
+
+/* Table rows for critical alerts */
+.table-danger {
+    --bs-table-bg: rgba(220, 53, 69, 0.15) !important;
+}
+
+/* Code blocks in tables */
+td code {
+    font-size: 0.85em;
+    color: #e685b5;
+}
+
+/* Log viewer message column */
+.text-break {
+    word-break: break-word;
+}
+
+/* Login page */
+body > .card {
+    border-radius: 12px;
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1d21;
+}
+::-webkit-scrollbar-thumb {
+    background: #495057;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6c757d;
+}
